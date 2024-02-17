@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,5 +25,21 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+
+    public function perfil()
+    {
+        // Obtener el usuario con id igual a 2
+        $usuario = User::where('id', 2)->first();
+
+        // Verificar si el usuario existe
+        if ($usuario) {
+            // Pasar el usuario a la vista
+            return view('/user/perfil', ['usuario' => $usuario]);
+        } else {
+            // Manejar el caso en que el usuario no exista
+            return abort(404); // Puedes personalizar esto según tus necesidades
+        }
     }
 }
