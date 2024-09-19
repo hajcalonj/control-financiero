@@ -30,7 +30,7 @@
              </a>
          </li>
          <li class="nav-item">
-             <a class="nav-link " href="{{ route('proyeccion') }}">
+             <a class="nav-link " href="{{ route('proyeccion.index') }}">
                  <i class="fas fa-percent"></i>
                  <span>Proyecci&oacute;n</span>
              </a>
