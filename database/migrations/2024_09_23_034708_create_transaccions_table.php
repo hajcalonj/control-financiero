@@ -11,9 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaccions', function (Blueprint $table) {
-            $table->id();
+        Schema::create('transacciones', function (Blueprint $table) {
+            $table->id('id_transaccion');
+            $table->unsignedBigInteger('id_proyeccion');
+            $table->integer('dia');
+            $table->string('motivo');
+            $table->unsignedBigInteger('id_movimiento');
+            $table->unsignedBigInteger('id_cuenta');
+            $table->string('Moneda');
+            $table->float('Monto', 8, 2);
+            $table->date('fecha_real');
             $table->timestamps();
+
+            $table->foreign('id_proyeccion')->references('id')->on('proyeccion')->onDelete('cascade');
+            $table->foreign('id_movimiento')->references('id')->on('tipo_movimiento');
+            $table->foreign('id_cuenta')->references('id')->on('tipo_cuenta');
         });
     }
 
@@ -22,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaccions');
+        Schema::dropIfExists('transacciones');
     }
 };

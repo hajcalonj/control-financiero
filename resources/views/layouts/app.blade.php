@@ -276,10 +276,27 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
+                        @if(session('error'))
+                        <div class="alert alert-danger">{{ session('error') }}</div>
+                        @endif
+
+                        @if(session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                        @endif
+
+                        @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">
+                            <h1 class=" mb-0 text-gray-800">
                                 @switch(Route::currentRouteName())
                                 @case('proyeccion.index')
                                 Proyecciones
@@ -290,9 +307,23 @@
                                 @case('proyeccion.edit')
                                 Editar Proyección
                                 @break
+                                @case('transaccion.index')
+                                Transacciones
+                                @break
+                                @case('transaccion.create')
+                                Crear Transacción
+                                @break
+                                @case('transaccion.edit')
+                                Editar Transacción
+                                @break
+                                @case('transaccion.show')
+                                Detalles de la Transacción
+                                @break
                                 @default
                                 {{ Route::currentRouteName() }}
                                 @endswitch
+
+
                             </h1>
 
                             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i

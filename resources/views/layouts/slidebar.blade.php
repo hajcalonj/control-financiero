@@ -24,7 +24,7 @@
              Secciones
          </div>
          <li class="nav-item">
-             <a class="nav-link " href="{{ route('real') }}">
+             <a class="nav-link " href="{{ route('transaccion.index') }}">
                  <i class="fas fa-money-check-alt"></i>
                  <span>Real</span>
              </a>
