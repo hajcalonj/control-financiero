@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProyeccionController;
 use App\Http\Controllers\TransaccionController;
+use App\Http\Controllers\ReporteController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,5 +22,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('/transaccion', TransaccionController::class);
 
     Route::resource('/proyeccion', ProyeccionController::class);
-    Route::get('/reporte', [HomeController::class, 'index'])->name('reporte');
+    Route::get('/reporte', [ReporteController::class, 'index'])->name('reporte');
 });
