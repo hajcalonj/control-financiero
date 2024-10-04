@@ -42,4 +42,11 @@ class HomeController extends Controller
             return abort(404); // Puedes personalizar esto según tus necesidades
         }
     }
+
+    public function usuarios()
+    {
+        $usuario = User::all();
+
+        return view('/user/users', ['usuario' => $usuario]);
+    }
 }
