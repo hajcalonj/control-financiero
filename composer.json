@@ -9,7 +9,7 @@
         "symfony/event-dispatcher": "^6.0",  
         "symfony/string": "^6.0",              
         "symfony/yaml": "^6.0",                
-        "symfony/console": "^6.0",             
+        "symfony/console": "^6.2",             
         "doctrine/dbal": "^3.9",
         "guzzlehttp/guzzle": "^7.5",           
         "laravel/framework": "^10.10",
