@@ -14,6 +14,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
+    Route::middleware(['web'])->group(function () {
+        Route::get('/', 'HomeController@index');
+    });
+    
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/usuarios', [HomeController::class, 'usuarios'])->name('usuarios');
     // Route::get('/perfil', [HomeController::class, 'index'])->name('perfil');
