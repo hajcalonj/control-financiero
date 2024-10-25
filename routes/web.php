@@ -25,11 +25,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/reporte', [ReporteController::class, 'index'])->name('reporte');
 });
 
-Route::get('/env', function () {
-    return response()->json([
-        'ASSET_URL' => env('ASSET_URL'),
-        'MEMCACHED_PERSISTENT_ID' => env('MEMCACHED_PERSISTENT_ID'),
-        // Add more variables as needed
-    ]);
-});
 
