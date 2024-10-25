@@ -1,8 +1,10 @@
 <?php
+// Enable error reporting for development
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 use App\Http\Kernel;
 use Illuminate\Http\Request;
-
 
 define('LARAVEL_START', microtime(true));
 
@@ -16,7 +18,6 @@ define('LARAVEL_START', microtime(true));
 | instead of starting the framework, which could cause an exception.
 |
 */
-
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
     require $maintenance;
 }
@@ -31,7 +32,6 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 | into the script here so we don't need to manually load our classes.
 |
 */
-
 require __DIR__.'/../vendor/autoload.php';
 
 /*
@@ -54,6 +54,3 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
