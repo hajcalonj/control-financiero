@@ -7,6 +7,8 @@ use App\Http\Kernel;
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
+dd(config('session.domain'));
+
 
 /*
 |--------------------------------------------------------------------------
