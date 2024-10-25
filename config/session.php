@@ -18,7 +18,6 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -30,8 +29,6 @@ return [
     | to immediately expire on the browser closing, set that option.
     |
     */
-
-    'lifetime' => env('SESSION_LIFETIME', 120),
 
     'expire_on_close' => false,
 
@@ -72,7 +69,7 @@ return [
     |
     */
 
-    'connection' => env('SESSION_CONNECTION'),
+  
 
     /*
     |--------------------------------------------------------------------------
@@ -100,7 +97,6 @@ return [
     |
     */
 
-    'store' => env('SESSION_STORE'),
 
     /*
     |--------------------------------------------------------------------------
@@ -126,10 +122,7 @@ return [
     |
     */
 
-    'cookie' => env(
-        'SESSION_COOKIE',
-        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
-    ),
+
 
     /*
     |--------------------------------------------------------------------------
@@ -155,20 +148,6 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | HTTPS Only Cookies
-    |--------------------------------------------------------------------------
-    |
-    | By setting this option to true, session cookies will only be sent back
-    | to the server if the browser has a HTTPS connection. This will keep
-    | the cookie from being sent to you when it can't be done securely.
-    |
-    */
-
-    'secure' => env('SESSION_SECURE_COOKIE'),
 
     /*
     |--------------------------------------------------------------------------
