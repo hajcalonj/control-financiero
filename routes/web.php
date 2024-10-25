@@ -23,6 +23,10 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/proyeccion', ProyeccionController::class);
     Route::get('/reporte', [ReporteController::class, 'index'])->name('reporte');
+    Route::get('/debug-config', function () {
+        return config('session.domain');
+    });
+    
 });
 
 
