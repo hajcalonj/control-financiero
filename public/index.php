@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Contracts\Http\Kernel;
+use App\Http\Kernel;
 use Illuminate\Http\Request;
+
 
 define('LARAVEL_START', microtime(true));
 
@@ -53,3 +54,6 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
