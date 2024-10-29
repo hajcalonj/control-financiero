@@ -49,3 +49,4 @@ class TipoCuentaYMovimientoSeeder extends Seeder
         
     }
 }
+
